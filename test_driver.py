@@ -1,4 +1,3 @@
-import unittest
 from isleapyear import is_leap_year
 import unittest
 class TestIsLeapYear(unittest.TestCase):
@@ -17,6 +16,7 @@ class TestIsLeapYear(unittest.TestCase):
         self.assertEqual(is_leap_year(1999), False)
         self.assertEqual(is_leap_year(2000), True)
         self.assertEqual(is_leap_year(2001), False)
-    
+
+
 if __name__ == '__main__':
     unittest.main()
