@@ -2,15 +2,15 @@ name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 
 categories:
-　　- title: 'Features'
- 		labels:
-		-'enhancement'
-	-title: 'Bug Fixes'
- labels:
- 	-'bug'
-	-'emergency'
- - title: 'Refactoring'
-   label: 'refactor'
+  - title: 'Features'
+    labels:
+      -'enhancement'
+  -title: 'Bug Fixes'
+    labels:
+      -'bug'
+      -'emergency'
+  - title: 'Refactoring'
+    label: 'refactor'
   - title: 'Documentation'
     label: 'documentation'
   - title: 'Tests'
@@ -21,31 +21,31 @@ change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 
 version-resolver:
-	major:
- 		labels:
-	 		- 'major'
-	minor:
- 		labels:
-	 		- 'minor'
-	patch:
- 		labels:
-	 		- 'patch'
-	default: patch
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
 
- template:
-	## Changes
- 	$CHANGES
+template:
+  ## Changes
+  $CHANGES
 
 autolabeler:
-	- label: enhancement
- 	branch:
-		-'/^feat(ure)?[/-].+/'
-	- label: bug
- 		branch:
-	 - '/^fix[/-].+/'
-	- label: emergency
- 	branch:
-		-'/^hotfix[/-].+/'
+  - label: enhancement
+    branch:
+      - '/^feat(ure)?[/-].+/'
+  - label: bug
+    branch:
+      - '/^fix[/-].+/'
+  - label: emergency
+    branch:
+      -'/^hotfix[/-].+/'
   - label: test
     branch:
       - '/^test[/-].+/'
