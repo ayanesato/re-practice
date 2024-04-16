@@ -9,7 +9,10 @@ on:
       - closed
   # Triggers the workflow on push or pull request events but only for the "main" branch
     branches:
-      - release-test #あとでmainに変更する
+      - feature/release_test
+      
+  permissons: 
+    contents: read
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,7 +21,7 @@ jobs:
     #write permisson is required to create a github release
       contents: write
       pull-requests: write
-   if: github.event.pull_requests.merged == true && startsWith(github.head_ref, 'release') 
+    if: github.event.pull_request.method == true && startWith(github.head_ref, 'release')
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
