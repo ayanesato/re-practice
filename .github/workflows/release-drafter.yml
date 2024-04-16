@@ -9,7 +9,8 @@ on:
       - closed
   # Triggers the workflow on push or pull request events but only for the "main" branch
     branches:
-      - feature/release_test
+      - feature/release
+      - feature/test_release
       
   permissons: 
     contents: read
