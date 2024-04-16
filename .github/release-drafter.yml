@@ -1,24 +1,24 @@
-name-template: 'v$RESOLVED_VERSION'
+name-template: 'v$RESOLVED_VERSION 🌈'
 tag-template: 'v$RESOLVED_VERSION'
 
 categories:
-  - title: 'Features'
+  - title: '🚀 Features'
     labels:
-      -'enhancement'
-  -title: 'Bug Fixes'
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
     labels:
-      -'bug'
-      -'emergency'
-  - title: 'Refactoring'
+      - 'bug'
+      - 'emergency'
+  - title: '🔧 Refactoring'
     label: 'refactor'
-  - title: 'Documentation'
+  - title: '📖 Documentation'
     label: 'documentation'
-  - title: 'Tests'
+  - title: '✅ Tests'
     label: 'test'
 
-
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
-change-title-escapes: '\<*_&'
+
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 
 version-resolver:
   major:
@@ -32,10 +32,10 @@ version-resolver:
       - 'patch'
   default: patch
 
-template:
+template: |
   ## Changes
   $CHANGES
-
+  
 autolabeler:
   - label: enhancement
     branch:
@@ -45,7 +45,7 @@ autolabeler:
       - '/^fix[/-].+/'
   - label: emergency
     branch:
-      -'/^hotfix[/-].+/'
+      - '/^hotfix[/-].+/'
   - label: test
     branch:
       - '/^test[/-].+/'
@@ -55,5 +55,3 @@ autolabeler:
   - label: documentation
     branch:
       - '/^doc[/-].+/'
- 
-
