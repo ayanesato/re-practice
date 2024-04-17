@@ -1,5 +1,4 @@
 name: Create Release Note
-
 on:
   pull_request:
     # PRが閉じたタイミングで実行
