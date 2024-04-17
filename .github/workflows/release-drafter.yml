@@ -28,7 +28,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Create Release Tag And Note
+      - name: Generate Release Note
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         #タイトルと内容を追加
