@@ -1,19 +1,19 @@
-name-template: 'v$RESOLVED_VERSION 🌈'
+name-template: 'v$RESOLVED_VERSION '
 tag-template: 'v$RESOLVED_VERSION'
 
 categories:
-  - title: '🚀 Features'
+  - title: 'Features'
     labels:
       - 'enhancement'
-  - title: '🐛 Bug Fixes'
+  - title: 'Bug Fixes'
     labels:
       - 'bug'
       - 'emergency'
-  - title: '🔧 Refactoring'
+  - title: 'Refactoring'
     label: 'refactor'
-  - title: '📖 Documentation'
+  - title: 'Documentation'
     label: 'documentation'
-  - title: '✅ Tests'
+  - title: 'Tests'
     label: 'test'
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
