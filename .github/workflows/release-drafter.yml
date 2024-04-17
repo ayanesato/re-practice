@@ -6,7 +6,6 @@ on:
       - closed
     # mainブランチのみを対象とする
     branches:
-      - main
       - test_release
 
 permissions:
