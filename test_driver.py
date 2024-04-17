@@ -3,9 +3,9 @@ import unittest
 class TestIsLeapYear(unittest.TestCase):
     def test_leap_year(self):
         #4で割り切れるが100で割り切れない場合とその前後
-        self.assertEqual(is_leap_year(2023), False)
-        self.assertEqual(is_leap_year(2024), True)
-        self.assertEqual(is_leap_year(2025), False)
+        self.assertEqual(is_leap_year(2019), False)
+        self.assertEqual(is_leap_year(2020), True)
+        self.assertEqual(is_leap_year(2021), False)
 
         #4と100で割り切れる場合(平年)とその前後
         self.assertEqual(is_leap_year(1899), False)
