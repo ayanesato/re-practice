@@ -1,4 +1,4 @@
-name: Create Release Note
+name: Generate Release Note
 on:
   pull_request:
     # PRが閉じたタイミングで実行
@@ -21,7 +21,7 @@ jobs:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Create Release Tag And Note
+      - name: Genterate Release Note
         env:
           # このトークンは自動生成されるのでsecretsを登録する必要ない
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
