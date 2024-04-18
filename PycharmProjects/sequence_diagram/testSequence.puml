@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor ユーザ
+Participant スマホアプリ #0067C0
+Database "FB Firestore" as FBFirestore #FFCC33
+Participant "FB Function" as FBFunction #FFCC33
+Participant FCM #FFCC33
+
+ユーザ -> スマホアプリ: リスク新規投稿ボタン押下
+スマホアプリ ->ユーザ: リスク追加画面表示
+ユーザ -> スマホアプリ: リスク情報入力
+スマホアプリ -> FBFirestore:リスク保存
+FBFirestore -> スマホアプリ:リスクデータ更新
+スマホアプリ ->ユーザ: リスク詳細画面表示
+FBFirestore -> FBFunction: データ更新通知
+FBFunction -> FCM: PUSH送信要求
+FCM -> スマホアプリ: PUSH通知
+スマホアプリ -> ユーザ: PUSH通知表示
+Note right: 投稿されたリスクが所属する協議会に所属するすべての通知許可ユーザに通知
+
+@enduml
