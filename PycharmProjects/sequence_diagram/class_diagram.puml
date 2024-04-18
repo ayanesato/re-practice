@@ -32,7 +32,7 @@ class Account{
 +create Transaction()
 }
 
-class ATM_Transaction{
+class ATM_Transactions{
 +transaction id
 +date
 +type
@@ -52,6 +52,11 @@ class Saving_Account{
 +balance
 }
 
-
-
+Customer "1" -up- "1,2" Account : "Has"
+Account "*" -up- "Account Transaction" ATM_Transactions :"1"
+Current_Account "1" -up- "Savings-Checking"  Saving_Account: "1"
+Bank o-- ATM
+Bank o-- Account
+Saving_Account <|-- Account
+ATM<.. Customer
 @enduml
