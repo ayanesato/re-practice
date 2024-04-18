@@ -1,0 +1,23 @@
+package main
+
+import "testing"
+
+func Test_is_leap_year(t *testing.T) {
+	type args struct {
+		year int
+	}
+	tests := []struct {
+		name string
+		args args
+		want bool
+	}{
+		// TODO: Add test cases.
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := isLeapYear(tt.args.year); got != tt.want {
+				t.Errorf("is_leap_year() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
