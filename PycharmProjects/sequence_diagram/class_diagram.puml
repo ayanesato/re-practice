@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Customer{
++name
++address
++job
++card number
++pin
++verifyPassword()
+}
+
+class Bank{
++code
++address
++manages()
++maintains()
+}
+
+class ATM{
++location
++managedby
++identifies()
++transctions()
+}
+
+class Account{
++number
++balance
++deposit()
++withdraw()
++create Transaction()
+}
+
+class ATM_Transactions{
++transaction id
++date
++type
++amount
++post balance
++modifies()
+}
+
+class Current_Account{
++account No.
++balance
++withdraw()
+}
+
+class Saving_Account{
++account No.
++balance
+}
+
+Customer "1" -up- "1,2" Account : "Has"
+Account "*" -up- "Account Transaction" ATM_Transactions :"1"
+Current_Account "1" -up- "Savings-Checking"  Saving_Account: "1"
+Bank o-- ATM
+Bank o-- Account
+Saving_Account <|-- Account
+ATM<.. Customer
+@enduml
