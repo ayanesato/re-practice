@@ -1,6 +1,21 @@
 package util
 
-import "testing"
+import (
+	"github.com/stretchr/testify/assert"
+	"testing"
+)
+
+func Test_isLeapYear_assert(t *testing.T) {
+	assert.False(t, false, isLeapYear(2023))
+	assert.True(t, true, isLeapYear(2024))
+	assert.False(t, false, isLeapYear(2025))
+	assert.False(t, false, isLeapYear(1999))
+	assert.True(t, true, isLeapYear(2000))
+	assert.False(t, false, isLeapYear(2001))
+	assert.False(t, false, isLeapYear(1899))
+	assert.False(t, false, isLeapYear(1900))
+	assert.False(t, false, isLeapYear(1901))
+}
 
 func Test_isLeapYear(t *testing.T) {
 	type args struct {
