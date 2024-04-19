@@ -6,27 +6,22 @@ import (
 )
 
 func Test_isLeapYear(t *testing.T) {
-	type args struct {
-		year int
-	}
-	tests := []struct {
-		name string
-		args args
-		want bool
-	}{
-		{"test1", args{year: 2023}, false},
-		{"test2", args{year: 2024}, true},
-		{"test3", args{year: 2025}, false},
-		{"test4", args{year: 1899}, false},
-		{"test5", args{year: 1900}, false},
-		{"test6", args{year: 1901}, false},
-		{"test7", args{year: 1999}, false},
-		{"test8", args{year: 2000}, true},
-		{"test9", args{year: 2001}, false},
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			assert.Equal(t, tt.want, isLeapYear(tt.args.year))
-		})
-	}
+	test1 := isLeapYear(2023)
+	test2 := isLeapYear(2024)
+	test3 := isLeapYear(2025)
+	test4 := isLeapYear(1999)
+	test5 := isLeapYear(2000)
+	test6 := isLeapYear(2001)
+	test7 := isLeapYear(1899)
+	test8 := isLeapYear(1900)
+	test9 := isLeapYear(1901)
+	assert.Equal(t, false, test1)
+	assert.Equal(t, true, test2)
+	assert.Equal(t, false, test3)
+	assert.Equal(t, false, test4)
+	assert.Equal(t, true, test5)
+	assert.Equal(t, false, test6)
+	assert.Equal(t, false, test7)
+	assert.Equal(t, false, test8)
+	assert.Equal(t, false, test9)
 }
