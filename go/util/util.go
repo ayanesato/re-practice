@@ -1,6 +1,6 @@
 package util
 
-func isLeapYear(year int) bool {
+func IsLeapYear(year int) bool {
 	if year%4 != 0 {
 		return false
 	}
